@@ -1,0 +1,29 @@
+spring:
+  kafka:
+    producer:
+      bootstrap-servers: localhost:9092
+      client-id: projeto-teste
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: io.confluent.kafka.serializers.KafkaAvroSerializer
+    consumer:
+      bootstrap-servers: localhost:9092
+      group-id: student-consumer
+      auto-offset-reset: latest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
+    properties:
+      schema:
+        registry:
+          url: "http://0.0.0.0:8081"
+      specific:
+        avro:
+          reader: true
+      auto:
+        register:
+          schemas: false
+topic:
+  name:
+    consumer:
+      student-topic-4
+    producer:
+      student-topic-4

@@ -1,0 +1,41 @@
+{
+  "namespace": "com.kafka.avro.model",
+  "type": "record",
+  "name": "Student",
+  "fields": [
+    {
+      "name": "studentId",
+      "type": "string"
+    },
+    {
+      "name": "studentName",
+      "type": "string"
+    },
+    {
+      "name": "age",
+      "type": ["null", "int"],
+      "default": null
+    },
+    {
+      "name": "courses",
+      "type": {
+          "type": "array",
+          "items":
+            {
+              "type": "record",
+              "name": "Course",
+              "fields": [
+                {
+                  "name": "courseId",
+                  "type": "string"
+                },
+                {
+                  "name": "courseName",
+                  "type": "string"
+                }
+              ]
+            }
+      }
+    }
+  ]
+}
