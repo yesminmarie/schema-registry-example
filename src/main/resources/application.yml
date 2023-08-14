@@ -22,8 +22,4 @@ spring:
         register:
           schemas: false
 topic:
-  name:
-    consumer:
-      student-topic-4
-    producer:
-      student-topic-4
+  name: student-topic-4

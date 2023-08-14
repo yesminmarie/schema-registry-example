@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 public class KafkaConsumer {
 
     @KafkaListener(
-            topics = "${topic.name.consumer}",
+            topics = "${topic.name}",
             groupId = "${spring.kafka.consumer.group-id}")
     public void listen(ConsumerRecord<String, Student> consumerRecord){
         log.info("**** avro started reading topic:{} partition:{} offset:{}",

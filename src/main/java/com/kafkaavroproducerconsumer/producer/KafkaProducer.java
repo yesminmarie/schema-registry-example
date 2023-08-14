@@ -18,7 +18,7 @@ public class KafkaProducer {
 
     private final KafkaProducerService kafkaProducerService;
 
-    @Value("${topic.name.producer}")
+    @Value("${topic.name}")
     private String avroTopicName;
 
     @PostMapping("/createStudent")
